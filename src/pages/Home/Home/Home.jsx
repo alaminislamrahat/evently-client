@@ -1,6 +1,7 @@
 import AboutUs from "../AboutUs/AboutUs";
 import AllEvents from "../AllEvent/AllEvents";
 import Hero from "../Hero/Hero";
+import WhyChooseEvently from "../WhyChooseEvently/WhyChooseEvently";
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
            <Hero/>
            <AboutUs/>
            <AllEvents/>
+           <WhyChooseEvently/>
         </div>
     );
 };
