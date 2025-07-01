@@ -29,7 +29,7 @@ const MyEvents = () => {
   const fetchMyEvents = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/myPost?email=${user?.email}`);
+      const res = await axios.get(`https://evently-server-sigma.vercel.app/myPost?email=${user?.email}`);
       setMyEvents(res.data.filter(event => event.email === user.email));
     } catch {
       toast.error('Failed to load your events');
@@ -46,7 +46,7 @@ const MyEvents = () => {
   // Actual delete after confirmation
   const handleDeleteConfirmed = async () => {
     try {
-      await axios.delete(`http://localhost:5000/delete/${deleteEventId}`);
+      await axios.delete(`https://evently-server-sigma.vercel.app/delete/${deleteEventId}`);
       toast.success('Event deleted');
       setDeleteEventId(null);
       fetchMyEvents();
@@ -80,7 +80,7 @@ const MyEvents = () => {
   const handleUpdateSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/update/${eventToUpdate._id}`, updateData);
+      await axios.put(`https://evently-server-sigma.vercel.app/update/${eventToUpdate._id}`, updateData);
       toast.success('Event updated successfully');
       setIsModalOpen(false);
       fetchMyEvents();

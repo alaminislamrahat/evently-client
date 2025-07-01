@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AddEvent from "../pages/AddEvent/AddEvent";
 import Events from "../pages/Events/Events";
 import MyEvents from "../pages/MyEvents/MyEvents";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -20,15 +21,21 @@ export const router = createBrowserRouter([
         },
         {
             path : '/addEvent',
-            element : <AddEvent/>
+            element : <PrivateRoute>
+                <AddEvent/>
+            </PrivateRoute>
         },
         {
             path : '/all-events',
-            element : <Events/>
+            element : <PrivateRoute>
+                <Events/>
+            </PrivateRoute>
         },
         {
             path : '/my-events',
-            element : <MyEvents/>
+            element :<PrivateRoute>
+                 <MyEvents/>
+            </PrivateRoute>
         },
         {
             path : '/login',

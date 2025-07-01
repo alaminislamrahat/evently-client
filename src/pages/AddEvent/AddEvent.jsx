@@ -43,7 +43,7 @@ const AddEvent = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/addEvent', dataToSend);
+      await axios.post('https://evently-server-sigma.vercel.app/addEvent', dataToSend);
       toast.success('Event added successfully!');
       setFormData({
         title: '',

@@ -16,7 +16,7 @@ const Events = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/addEvent');
+      const res = await axios.get('https://evently-server-sigma.vercel.app/addEvent');
       setEvents(res.data);
     } catch {
       toast.error('Failed to fetch events');
@@ -102,7 +102,7 @@ const Events = () => {
       return;
     }
     try {
-      await axios.patch(`http://localhost:5000/addEvent/${eventId}`, { userEmail: user.email });
+      await axios.patch(`https://evently-server-sigma.vercel.app/addEvent/${eventId}`, { userEmail: user.email });
       toast.success('Successfully joined the event');
       fetchEvents();
     } catch (err) {
